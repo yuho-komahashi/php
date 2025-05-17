@@ -1,0 +1,57 @@
+/* h2エリアの指定 */
+.search-form__content{
+    margin: 0 auto;
+    padding: 60px 15px;
+    max-width: 1230px;
+}
+
+/* h2の指定 */
+.search-form__content-title{
+    text-align: center;
+}
+
+/*これhtmlにないけど、、、いらないと思うよ
+.search-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}*/
+
+/* セレクトタグとボタンの親要素 */
+.search-form{
+    display:flex;
+    justify-content: center;
+}
+
+/* セレクト部分全体 */
+.search-form__item{
+    padding: 0 5px;
+    width:300px;
+}
+
+/* セレクトタグ個々部分 */
+.search-form__item-select{
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border:1px solid #dddddd;
+    border-radius: 3px;
+    appearance: none; /*セレクトタグ特有のVマーク（押下を促す）を消去*/
+}
+
+/* 検索ボタンエリア */
+.search-form__button{
+    padding: 0 5px;
+    width:120px;
+}
+
+/* 検索ボタン */
+.search-form__button-submit{
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: #000000;
+    color: #ffffff;
+    cursor:pointer;
+}

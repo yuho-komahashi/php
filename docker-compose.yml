@@ -1,17 +1,30 @@
 version: '3.8'
 
 services:
-  nginx:
-    image: nginx:1.21.1
+  apache:
+    image: httpd:latest
+    container_name: php-apache-1
     ports:
       - "80:80"
     volumes:
-      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./src:/var/www/
+      - ./src:/usr/local/apache2/htdocs
+      - ./src/php02:/usr/local/apache2/htdocs/php02
     depends_on:
       - php
 
   php:
     build: ./docker/php
     volumes:
-      - ./src:/var/www/
+      - type: bind
+        source: /home/honey/coachtech/php/src
+        target: /var/www/html
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /home/honey/coachtech/php/src/php02
+        target: /var/www/html/php02
+        bind:
+          create_host_path: true
+
+
+
